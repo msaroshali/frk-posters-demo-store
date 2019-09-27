@@ -6,7 +6,7 @@
 	</div>
 
 	<!-- enter address -->
-	<form id="formAddBillAddr" class="form-horizontal"
+	<form id="formAddBillAddr" class="form-row"
 		action="${contextPath}/billingAddressCompleted" method="post">
 		<!-- include form -->
 		<#include "../components/addressForm.ftl.html"/>
@@ -15,9 +15,9 @@
 			<div class="col-sm-12 nopadding">
 				<div class="col-sm-3"></div>
 				<div class="col-sm-9">
-					<span class="reqField pull-left textcolordarkgrey">*
+					<span class="reqField pull-xs-left textcolordarkgrey">*
 						${i18n('titleRequiredFields')}</span>
-					<button id="btnAddBillAddr" class="btn btn-primary pull-right"
+					<button id="btnAddBillAddr" class="btn btn-primary pull-xs-right"
 						name="btnAddBillAddr" type="submit">${i18n('buttonContinue')}</button>
 				</div>
 			</div>

@@ -3,7 +3,7 @@
 <div>
     <div id="titleOrderOverview" class ="h2 header-container">${i18n("titleOrderOverview")}</div>
     <div class="row">
-        <ul class="list-unstyled">
+        <ul class="list-unstyled col">
             <!-- print shipping address -->
             <li class="col-md-4">
                 <h3>${i18n("titleShippingAddress")}</h3>
@@ -66,14 +66,14 @@
             <#list orderProducts as orderProduct>
             <tr id="product${orderProduct_index}">
                 <td>
-                    <div class="visible-xs pNameMobile">
+                    <div class="d-block d-sm-none pNameMobile">
                         <strong>${orderProduct.product.name}</strong>
                     </div> <a
                         href="productDetail/${orderProduct.product.name?url('UTF-8')}?productId=${orderProduct.product.id}"><img
                             data-src="${contextPath}/assets/js/holder.js/150x100"
                             alt="${orderProduct.product.name}"
                             src="${contextPath}${orderProduct.product.imageURL}" width="150"></a>
-                    <div class="visible-xs">
+                    <div class="d-block d-sm-none">
                         <div class="text-left">
                             <ul class="list-unstyled small">
                                 <li>${i18n("cartStyle")}: <span class="pStyleMobile">${orderProduct.finish}</span></li>
@@ -84,7 +84,7 @@
                     </div>
                 </td>
                 <td>
-                    <div class="hidden-xs">
+                    <div class="d-none d-sm-block">
                         <div class="pName font-bold">
                             ${orderProduct.product.name}
                         </div>
@@ -112,61 +112,67 @@
     </table>
 
     <div class="container-fluid" id="SubTotal">
-        <div class="col-md-8"></div>
-        <div class="col-md-4">
+        <div class="col-sm-12">
+        <div class="col-sm-6">
             <ul id="checkoutSummaryList" class="list-unstyled row">
-                <li class="header bgLightGrey row">
-                    <div class="col-xs-12 font-bold">
+               <div class="card mb-4 border-0 col-sm-12">
+                <li class="card-header bgLightGrey row">
+                    <div class="col-sm-12 font-bold">
                         ${i18n("cartSummary")}
                     </div>
                 </li>
                 <!-- print sub total price -->
                 <li class="bgLightGrey2 row">
-                    <div class="col-xs-6 text-left">
+                    <div class="col-sm-6 text-left">
                         ${i18n("checkoutOverviewSubTotal")}</div>
-                    <div class="col-xs-6 text-right">
+                    <div class="col-sm-6 text-right">
                         <span id="SubTotalValue" class="value">${currency}${order.getSubTotalCostsAsString()}</span>
                     </div>
 
                 </li>
                 <!-- print shipping price -->
                 <li class="bgLightGrey2 row">
-                    <div class="col-xs-6 text-left">
+                    <div class="col-sm-6 text-left">
                         ${i18n("checkoutOverviewShippingCosts")}</div>
-                    <div class="col-xs-6 text-right">
+                    <div class="col-sm-6 text-right">
                         <span id="shippingCosts" class="value">${currency}${order.getShippingCostsAsString()}</span>
                     </div>
                 </li>				
                 <!-- print tax -->
                 <li class="bgLightGrey2 row">
-                    <div class="col-xs-6 text-left">
+                    <div class="col-sm-6 text-left">
                         ${i18n("checkoutOvervieSubTotalTax")} (${order.getTaxAsString()}%)</div>
-                    <div class="col-xs-6 text-right">
+                    <div class="col-sm-6 text-right">
                         <span id="subTotalTaxValue" class="value">${currency}${order.getTotalTaxCostsAsString()}</span>
                     </div>
                 </li>
                 <!-- print total price -->
                 <li class="bgLightGrey row">
-                    <div class="col-xs-6 text-left">
+                    <div class="col-sm-6 text-left">
                         <strong>${i18n("checkoutOverviewTotalCosts")}</strong></div>
-                    <div class="col-xs-6 text-right">
+                    <div class="col-sm-6 text-right">
                         <span id="totalCosts" class="value"><strong>${currency}${order.getTotalCostsAsString()}</strong></span>
                     </div>
                 </li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- order button -->
+              <li>
+                    <!-- order button -->
     <div class="row">
-        <div class="col-xs-12">
-            <div id="prodPrice" class="pull-right">
+        <div class="col-xs-12 ">
+            <div id="prodPrice" class="text-xs-right">
                 <form action="${contextPath}/checkoutCompleted" method="post">
-                    <button class="btn btn-primary pull-right" id="btnOrder"
+                    <button class="btn btn-primary btn-lg text-xs-right" id="btnOrder"
                             name="btnOrder" type="submit">${i18n("checkoutOverviewOrderWithCosts")}</button>
                 </form>
             </div>
         </div>
     </div>
+                </li> 
+            </div>
+            </ul>
+        </div>
+    </div>
+    </div>
+</div>
+    
 </div>
 </@layout.myLayout>

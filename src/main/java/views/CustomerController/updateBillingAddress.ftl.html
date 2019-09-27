@@ -1,6 +1,6 @@
 <#import "../layout/defaultLayoutWebShop.ftl.html" as layout>
 <@layout.myLayout "The ultimate webshop">
-<form id="formUpdateBillAddr" class="form-horizontal"
+<form id="formUpdateBillAddr" class="form-row"
 	action="${contextPath}/updateBillingAddressCompleted" method="post">
 	<fieldset>
 		<!-- Form Name -->
@@ -16,9 +16,9 @@
 				<div class="col-sm-12 nopadding">
 					<div class="col-sm-3"></div>
 					<div class="col-sm-9">
-						<span class="reqField pull-left textcolordarkgrey">*
+						<span class="reqField pull-xs-left textcolordarkgrey">*
 							${i18n('titleRequiredFields')}</span>
-						<button id="btnUpdateBillAddr" class="btn btn-primary pull-right"
+						<button id="btnUpdateBillAddr" class="btn btn-primary pull-xs-right"
 							name="btnUpdateBillAddr" type="submit">${i18n('buttonSave')}</button>
 					</div>
 				</div>

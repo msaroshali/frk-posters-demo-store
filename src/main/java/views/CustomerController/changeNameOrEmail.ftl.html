@@ -1,6 +1,6 @@
 <#import "../layout/defaultLayoutWebShop.ftl.html" as layout>
 <@layout.myLayout "The ultimate webshop">
-<form id="formChangeNameEmail" class="form-horizontal"
+<form id="formChangeNameEmail" class="form-row"
 	action="${contextPath}/changeNameOrEmailCompleted" method="post">
 	<fieldset>
 		<!-- Form Name -->
@@ -11,7 +11,7 @@
 
 			<!-- last name -->
 			<div class="form-group">
-				<label class="col-sm-3 control-label" for="lastName">${i18n("labelMyName")}*</label>
+				<label class="col-sm-7 col-form-label" for="lastName">${i18n("labelMyName")}*</label>
 				<div class="col-sm-9">
 					<input id="lastName" name="lastName"
 						placeholder="${i18n('registrationLastName')}" class="form-control"
@@ -23,7 +23,7 @@
 			<!-- first name -->
 
 			<div class="form-group">
-				<label class="col-sm-3 control-label" for="firstName">${i18n("labelMyFirstName")}*</label>
+				<label class="col-sm-7 col-form-label" for="firstName">${i18n("labelMyFirstName")}*</label>
 				<div class="col-sm-9">
 					<input id="firstName" name="firstName"
 						placeholder="${i18n('registrationFirstName')}"
@@ -35,7 +35,7 @@
 
 			<!-- email -->
 			<div class="form-group">
-				<label class="col-sm-3 control-label" for="eMail">${i18n("labelMyEmail")}*</label>
+				<label class="col-sm-7 col-form-label" for="eMail">${i18n("labelMyEmail")}*</label>
 				<div class="col-sm-9">
 					<input id="eMail" name="eMail"
 						placeholder="${i18n('registrationEmail')}" class="form-control"
@@ -47,7 +47,7 @@
 
 			<!-- password -->
 			<div class="form-group">
-				<label class="col-sm-3 control-label" for="password">${i18n("changeCustomerDetailEnterPassword")}*</label>
+				<label class="col-sm-7 col-form-label" for="password">${i18n("changeCustomerDetailEnterPassword")}*</label>
 				<div class="col-sm-9">
 					<input id="password" name="password"
 						placeholder="${i18n('registrationPassword')}" class="form-control"
@@ -60,9 +60,9 @@
 				<div class="col-sm-12 nopadding">
 					<div class="col-sm-3"></div>
 					<div class="col-sm-9">
-						<span class="reqField pull-left textcolordarkgrey">*
+						<span class="reqField pull-xs-left textcolordarkgrey">*
 							${i18n('titleRequiredFields')}</span>
-						<button id="btnChangeNameEmail" class="btn btn-primary pull-right"
+						<button id="btnChangeNameEmail" class="btn btn-primary pull-xs-right"
 							name="btnChangeNameEmail" type="submit">${i18n('changeCustomerDetailUpdateAccount')}</button>
 					</div>
 				</div>

@@ -42,9 +42,9 @@
 
 		<div class="row">
 			<div class="col-xs-12">
-				<div class="pull-right">
+				<div class="pull-xs-right">
 					<!-- Trigger the modal with a button -->
-					<button type="button" class="btn btn-default" data-toggle="modal"
+					<button type="button" class="btn btn-primary" data-toggle="modal"
 						data-target="#addAdressModal">${i18n("shippingAddressAddNew")}</button>
 					<!-- button - continue  -->
 					<button class="btn btn-primary" id="btnUseAddressContinue"
@@ -57,7 +57,7 @@
 	<!-- Modal for add new address-->
 	<div id="addAdressModal" class="modal fade" role="dialog">
 		<div class="modal-dialog">
-			<form id="formAddAddr" class="form-horizontal"
+			<form id="formAddAddr" class="form-row"
 				action="${contextPath}/shippingAddressCompleted" method="post">
 
 				<!-- Modal content-->
@@ -72,8 +72,8 @@
 							<#include "../components/addressForm.ftl.html"/>
 							<hr>
 							<!-- choose: shipping equals billing address -->
-							<div class="form-group pull-right">
-								<div class="col-xs-12 col-sm-7 text-right">${i18n("shippingAddressEqualsBillingAddress")}:</div>
+							<div class="form-group pull-xs-right">
+								<div class="col-xs-12 col-sm-7 pull-left">${i18n("shippingAddressEqualsBillingAddress")}:</div>
 								<div class="col-xs-12 col-sm-5 margin_top7">
 									<div>
 										<label for="billEqualShipp-Yes"> <input
@@ -94,10 +94,10 @@
 					</div>
 
 					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal" title="${i18n('buttonClose')}">${i18n('buttonClose')}</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal" title="${i18n('buttonClose')}">${i18n('buttonClose')}</button>
 						<!-- continue button -->
 						<button id="btnAddAddr" name="btnAddAddr"
-							class="btn btn-primary pull-right" type="submit" title="${i18n('buttonContinue')}">${i18n('buttonContinue')}</button>
+							class="btn btn-primary pull-xs-right" type="submit" title="${i18n('buttonContinue')}">${i18n('buttonContinue')}</button>
 					</div>
 				</div>
 			</form>

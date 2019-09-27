@@ -2,7 +2,7 @@
 	<div class="cartMiniEmpty">${i18n("infoEmptyCartShort")}</div>
 
 	<div class="cartMiniHeader">
-		<div class="cartMiniProductCounter">
+		<div class="cartItems cartMiniProductCounter">
 			<span class="value font-bold">${cartProductCount}</span>
 			<#if cartProductCount == 1 > ${i18n("miniCartItem")} <#else>
 			${i18n("miniCartItems")} </#if>
@@ -11,24 +11,30 @@
 
 	<div class="cartMiniElementListWrap">
 		<span class="notificationsLoader"></span>
-		<ul class="list-unstyled cartMiniElementList">
+		<ul class=" list-unstyled cartMiniElementList">
 			<#list cartProducts as product>
 			<li
 				class="productId${product.product.id}${product.getFinish()}${product.size.width}x${product.size.height} miniCartItem" data-prodId="${product.product.id}">
-				<ul class="cartItems list-unstyled">
-					<li class="prodName">${product.product.name}</li>
-					<li>${i18n("cartTableHeaderQuantity")}: <span 
+				<ul class="cartItems text-center row list-unstyled ">
+					
+					
+					<li>
+						<span
+						class="prodName">${product.product.name}</span>
+						<span>${i18n("cartTableHeaderQuantity")}: </span>
+						<span 
 						class="prodCount">${product.getProductCount()}</span> (<span 
 						class="prodStyle">${product.getFinish()}</span>, <span class="prodSize"><span 
 						class="prodWidth">${product.size.width}</span> x <span class = "prodHeight">${product.size.height}</span> <span 
 						class = "unitLength">${unitLength}</span></span>)
 					</li>
+				
 					<li>
 						<div class="prodPrice text-right">
 							<strong>${currency}${product.getTotalUnitPriceAsString()}</strong>
 						</div>
 					</li>
-				</ul>
+				</ul> 
 			</li> </#list>
 		</ul>
 	</div>

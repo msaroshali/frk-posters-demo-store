@@ -4,13 +4,13 @@
 <li class="userMenuHeader">${i18n('headerWelcomeGuest')}</li>
 <li class="userMenuContent"><a href="${applUrlHttps}/registration"
 	class="goToRegistration" title="${i18n('headerRegistration')}"> <span
-		class="glyphicon glyphicon-user"></span> <span class="margin_left5"></span><span
+		class="fa fa-user"></span> <span class="margin_left5"></span><span
 		class="text-primary">${i18n("headerRegistration")}</span>
 </a></li>
 <li class="userMenuContent"><a
 	href="${applUrlHttps}/login" class="goToLogin"
 	title="${i18n('headerLogin')}"><span
-		class="glyphicon glyphicon-log-in"></span> <span class="margin_left5"></span><span
+		class="fa fa-sign-out-alt"></span> <span class="margin_left5"></span><span
 		class="text-primary">${i18n('headerLogin')}</span>
 </a></li>
 </#if> <#if isLogged == true>
@@ -19,11 +19,11 @@
 <li class="userMenuContent"><a
 	href="${applUrlHttps}/accountOverview" class="goToAccountOverview"
 	title="${i18n('accountOverviewTitle')}"><span
-		class="glyphicon glyphicon-info-sign"></span> <span
+		class="fa fa-info-circle"></span> <span
 		class="margin_left5"></span><span
 		class="text-primary">${i18n("accountOverviewTitle")}</span></a></li>
 <li class="userMenuContent"><a href="${applUrlHttp}/logout"
 	title="${i18n('headerLogout')}" class="goToLogout"><span
-		class="glyphicon glyphicon-log-out"></span> <span class="margin_left5"></span><span
+		class="fa fa-sign-out-alt"></span> <span class="margin_left5"></span><span
 		class="text-primary">${i18n("headerLogout")}</span></a></li>
 </#if>

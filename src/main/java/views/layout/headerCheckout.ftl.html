@@ -1,36 +1,66 @@
-<nav id="headerCheckout" class="navbar navbar-default navbar-static-top container-fluid">
-    <div class="row">
-        <div class="navbar-header col-xs-12 col-sm-11">
-            <!-- navbar-brand -->
-                <a id="brand" href="${applUrlHttp}/" title="${i18n('titleShop')}"> 
-                    <img class="shopLogo" src="${contextPath}/assets/img/xceptanceLogo.png"
-                      title="${i18n('titleShopLogo')}" alt="${i18n('titleShopLogo')}">
-                    <span class="titleShopText">${i18n('titleShop')}</span>
-                </a>
-        </div>
-        <div class="col-xs-12 col-sm-1">
-            <!-- login form -->
-            <ul id="showUserMenu"
-                class="nav nav-pills header-menu-item">
-                <li role="presentation" class="dropdown">
-                    <a id="showUserMenu" class="dropdown-toggle" data-toggle="dropdown" href="#"
-                        title="${i18n('headerLogin')}" role="button" aria-haspopup="true" aria-expanded="false"> 
-                        <#if isLogged == false>
-                            <span class="glyphicon glyphicon-user not-logged"></span>
-                        </#if>
-                        <#if isLogged == true>
-                            <span class="glyphicon glyphicon-user logged"></span>
-                        </#if>
-                    </a>
-                    <ul id="userMenu"
-                        class="dropdown-menu dropdown-menu-right hidden-xs">
-                        <#include '../components/userMenu.ftl.html'/>
-                    </ul>
-                    <ul id="userMenuMobile"
-                        class="dropdown-menu hidden-sm hidden-md hidden-lg">
-                        <#include '../components/userMenu.ftl.html' />
-                    </ul>
-            </ul>
-        </div>
-    </div>
+<nav id="globalNavigation"
+	class="navbar navbar-static-top">
+	<div class="container-fluid col-sm-12">
+		
+		<!-- bootstrap header menu for larger than mobile -->
+			<div class="col-sm-6 col-md-4 col-lg-3 d-none d-sm-block">
+				<a id="brand" href="${applUrlHttp}/" title="${i18n('titleShop')}"> 
+					<img class="shopLogo img-fluid" src="${contextPath}/assets/img/xceptanceLogo.png"
+					  title="${i18n('titleShopLogo')}" alt="${i18n('titleShopLogo')}">
+					<span class="titleShopText" style="color: black">${i18n('titleShop')}</span>
+				</a>
+			</div>
+
+		    
+		<div class="navbar-header header header-top-left col-xs-4">
+			
+			<!-- navbar-brand -->
+			<!-- bootstrap header menu for mobile -->
+			<div class="navbar-brand d-sm-none">
+				
+				<a id="brandMobile" href="${applUrlHttp}/" title="${i18n('titleShop')}">
+					<img class="shopLogoMobile img-fluid" src="${contextPath}/assets/img/xceptanceLogo.png"
+					  title="${i18n('titleShopLogo')}" alt="${i18n('titleShopLogo')}">
+					<span class="textcolordarkgrey">${i18n('titleShop')}</span>
+				</a>
+			</div></div>
+			
+		<!-- user menu -->
+		
+			<!-- login form -->
+		<div class="col-xs-12 col-md-1 col-lg-1">
+			<ul class="nav nav-pills mr-auto header-menu-item">
+				<li role="presentation" class="nav-item presentation dropdown">
+					<#if isLogged == false>
+					<a id="showUserMenu" class="textcolorlightgrey dropdown-toggle nav-link btn-light userMenu" data-toggle="dropdown" href="#" data-target="#"
+						title="${i18n('headerLogin')}" role="button" aria-haspopup="true" aria-expanded="false"> 
+						<span class="textcolorlightgrey fa fa-user not-logged"></span>
+						</#if>
+						<#if isLogged == true>
+						<a id="showUserMenu" class="textcolordarkgrey dropdown-toggle nav-link btn-light userMenu" data-toggle="dropdown" href="#" data-target="#"
+						title="${i18n('headerLogin')}" role="button" aria-haspopup="true" aria-expanded="false"> 
+							<span class=" textcolordarkgrey fa fa-user logged"></span>
+						</#if>
+					</a>
+				<div class="d-none d-md-block">
+					<ul id="userMenu"
+						class="dropdown-menu dropdown-menu-right">
+						<li class="dropdown-item">
+						<#include '../components/userMenu.ftl.html'/>
+						</li>
+					</ul> 
+					
+				</div>
+				<div class="d-block d-md-none">
+					<ul id="userMenuMobile"
+						class="dropdown-menu">
+						<li class="dropdown-item ">
+						<#include '../components/userMenu.ftl.html' />
+						</li>
+					</ul>
+				</div>
+				</li>
+			</ul>
+		</div>
+	</div>
 </nav>

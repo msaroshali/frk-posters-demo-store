@@ -27,7 +27,7 @@
 </script>
 
 <div class="row">
-	<div class="col-xs-12">
+	<div class="col-sm-12 text-center">
 		<div class="header-container">
 			<#if category??>
 			<div id="titleCategoryName" class="h2">${category.name} (<span id="totalProductCount">${totalProductCount}</span>  <#if totalProductCount == 1 >${i18n("searchProductPoster")}<#else>${i18n("searchProductPosters")}</#if>)</div>
@@ -38,51 +38,65 @@
 			</#if>
 		</div>
 	</div>
+
+
+
 	<!-- products -->
-	<div id="productOverview" class="col-xs-12">
-		<#list products as pro> <#if (pro_index + 3) % 3 == 0>
-		<div class="row">
-			<ul class="thumbnails list-unstyled row">
-				</#if>
-				<li class="col-xs-12 col-sm-6 col-md-4">
-					<div id="product${pro_index}" class="thumbnail">
-						<div class="container-fluid">
-							<a href="${contextPath}/productDetail/${pro.name?url('UTF-8')}?productId=${pro.id}">
-								<img data-src="${contextPath}/assets/js/holder.js/300x200"
-								alt="${pro.name}" title="${pro.name}"
-								src="${contextPath}${pro.imageURL}" class="pImage">
-								<div class="pInfo">
-									<h4 class="text-primary pName">${pro.name}</h4>
-									<div class="text-muted">
-										<p>
-											<span class="pDescriptionOverview">${pro.descriptionOverview}</span><br>${i18n("priceStart")} ${currency}<span class="font-bold pPrice">${pro.getPriceAsString()}</span>
-										</p>											
+	<div id="productOverview" class="col-sm-12">
+			<#list products as pro> <#if (pro_index + 6) % 6 == 0>
+		
+				<ul class="thumbnails list-unstyled row">
+					</#if>
+									
+						<li class="margin_bot30 col-sm-12 col-md-6 col-lg-4 text-center card pOverviewCard border-white h-100 w-100">
+						<div id="product${pro_index}" class="text-center">
+							<div class="container-fluid">
+								<a href="${contextPath}/productDetail/${pro.name?url('UTF-8')}?productId=${pro.id}">
+									<img data-src="${contextPath}/assets/js/holder.js/300x200"
+									alt="${pro.name}" title="${pro.name}"
+									src="${contextPath}${pro.imageURL}" class="img-fluid pImage img-rounded card-header">
+									<div class="pInfo card-body w-100 h-100">
+										<h4 class="pName text-primary pName">${pro.name}</h4>
+										<div class="text-muted">
+											<p class="pOverviewDescription">
+												<span class="pDescriptionOverview">${pro.descriptionOverview}</span>
+												<br>
+												
+												</p>											
+												
+												<button class="btn btn-primary">${i18n("priceStart")} ${currency}<span class="font-bold pPrice">${pro.getPriceAsString()}</span>
+												</button>
+											
+											</div>
 									</div>
-								</div>
-							</a>
+								</a>
+							</div>
 						</div>
-					</div>
-				</li> <#if (pro_index + 1) % 3 == 0>
+					
+					</li>
+				
+					<#if (pro_index + 1) % 6 == 0>
+				</ul>
+			
+			</#if> <#if !pro_has_next && (pro_index + 1) % 6 != 0>
 			</ul>
 		</div>
-		</#if> <#if !pro_has_next && (pro_index + 1) % 3 != 0>
-		</ul>
-	</div>
-	</#if> </#list>
+		</#if> </#list>
+	
+		</div>
 
-	</div>
-
-<#if totalPages gt 1 >
-<!-- paging, only if more than one result page -->
-	<!-- paging -->
-	<div class="col-xs-12 h4">
-		<div class="pagination pull-right">
-			<ul id="pagination-bottom"></ul>
+	<#if totalPages gt 1 >
+	<!-- paging, only if more than one result page -->
+		<!-- paging -->
+		<div class="col-sm-12 h4 text-center">
+			<div class="pagination">
+				<ul id="pagination-bottom"></ul>
+			</div>
 		</div>
 	</div>
-</div>
-<script type="text/javascript">	
-        $('#pagination-bottom').bootstrapPaginator(options);
-	</script>
-</#if>
-</@layout.myLayout>
+	<script type="text/javascript">	
+			$('#pagination-bottom').bootstrapPaginator(options);
+		</script>
+	</#if>
+	</@layout.myLayout>
+	

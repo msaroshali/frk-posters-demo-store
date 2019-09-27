@@ -131,6 +131,12 @@ public class PosterConstants
     public final String TEMPLATE_LOGIN_FORM = "views/CustomerController/loginForm.ftl.html";
 
     /**
+     * The path to the License view template.
+     */
+    public final String TEMPLATE_LICENSE_VIEW = "views/layout/LicenseView.ftl.html";
+
+
+    /**
      * The URL of the application, if HTTP is used.
      */
     public final String APPLICATION_URL_HTTP;

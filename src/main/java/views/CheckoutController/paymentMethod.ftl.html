@@ -40,9 +40,9 @@
 
 		<div class="row">
 			<div class="col-xs-12">
-				<div class="pull-right">
+				<div class="pull-xs-right">
 					<!-- Trigger the modal with a button -->
-					<button type="button" class="btn btn-default" data-toggle="modal"
+					<button type="button" class="btn btn-primary" data-toggle="modal"
 						data-target="#addPaymentModal">${i18n("paymentMethodAddNew")}</button>
 					<!-- button - continue  -->
 					<button class="btn btn-primary" id="btnUsePayment"
@@ -55,7 +55,7 @@
 	<!-- Modal for add new address-->
 	<div id="addPaymentModal" class="modal fade" role="dialog">
 		<div class="modal-dialog">
-			<form id="formAddPaymentModal" class="form-horizontal"
+			<form id="formAddPaymentModal" class="form-row"
 				action="${contextPath}/paymentMethodCompleted" method="post">
 
 				<!-- Modal content-->
@@ -71,10 +71,10 @@
 						</fieldset>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal" title="${i18n('buttonClose')}">${i18n('buttonClose')}</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal" title="${i18n('buttonClose')}">${i18n('buttonClose')}</button>
 						<!-- continue button -->
 						<button id="btnAddPayment" name="btnAddPayment"
-							class="btn btn-primary pull-right" type="submit" title="${i18n('buttonContinue')}">${i18n('buttonContinue')}</button>
+							class="btn btn-primary pull-xs-right" type="submit" title="${i18n('buttonContinue')}">${i18n('buttonContinue')}</button>
 					</div>
 				</div>
 			</form>

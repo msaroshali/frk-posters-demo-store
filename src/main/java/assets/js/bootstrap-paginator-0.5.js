@@ -201,7 +201,8 @@
         onPageItemClicked: function (event) {
 
             var type = event.data.type,
-                page = event.data.page;
+                page = event.data.page,
+                
 
             this.$element.trigger("page-clicked", [event, type, page]);
 
@@ -349,7 +350,8 @@
          *
          * @return Object the constructed page element
          * */
-        buildPageItem: function (type, page) {
+        build
+        : function (type, page) {
 
             var itemContainer = $("<li></li>"),//creates the item container
                 itemContent = $("<a></a>"),//creates the item content
@@ -561,13 +563,13 @@
             case "first":
                 return "&lt;&lt;";
             case "prev":
-                return "&lt;";
+                return "\xa0\xa0" + "&lt;";
             case "next":
-                return "&gt;";
+                return "&gt;" + "\xa0\xa0";
             case "last":
                 return "&gt;&gt;";
             case "page":
-                return page;
+                return "\xa0" + page + "\xa0";
             }
         },
         tooltipTitles: function (type, page, current) {
