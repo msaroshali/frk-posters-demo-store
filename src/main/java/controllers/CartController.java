@@ -188,6 +188,7 @@ public class CartController
         final Result result = Results.json();
 
         // add currency
+
         result.render("currency", xcpConf.CURRENCY);
         // add unit of length
         result.render("unitLength", xcpConf.UNIT_OF_LENGTH);
