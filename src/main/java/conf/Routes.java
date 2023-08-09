@@ -124,6 +124,9 @@ public class Routes implements ApplicationRoutes
         router.GET().route("/checkoutOverview").with(CheckoutController.class, "checkoutOverview");
         // router.POST().route("/orderConfirmation").with(CheckoutController.class, "orderConfirmation");
         router.POST().route("/checkoutCompleted").with(CheckoutController.class, "checkoutCompleted");
+        router.GET().route("/orderConfirmation").with(CheckoutController.class, "orderConfirmation");
+        //Go to the homepage after completion of order
+        router.GET().route("/").with(WebShopController.class, "index");
         // ############################################################
         // assets
         // ############################################################
